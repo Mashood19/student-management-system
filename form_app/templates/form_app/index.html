@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Header / Navbar -->
+<header class="header">
+    <div class="logo-area">
+        <!-- <i class="fas fa-university"></i> -->
+        <span>Mashood Institute</span>
+    </div>
+
+    <div class="header-info">
+        <p>Canal Road, Faisalabad</p>
+        <p>Phone: 111-111-1111</p>
+    </div>
+</header>
+
+<!-- Form -->
+<div class="form-container">
+    <h2>Student Registration Form</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" name="name" placeholder="Enter full name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Contact</label>
+            <input type="text" name="contact" placeholder="Enter contact number" required>
+        </div>
+
+        <!-- Custom Course Search -->
+        <div class="form-group">
+            <label>Course</label>
+            <div class="custom-select">
+                <input
+                    type="text"
+                    id="courseInput"
+                    name="course"
+                    placeholder="Search or select course"
+                    autocomplete="off"
+                    required
+                >
+                <div class="dropdown" id="courseDropdown"></div>
+            </div>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-left">
+        <h4>Mashood Institute</h4>
+        <p>Canal Road, Faisalabad</p>
+        <p>Phone: 111-111-1111</p>
+        <p>Email: info@institute.edu</p>
+    </div>
+
+    <div class="footer-right">
+        <p>© 2025 Mashood Institute</p>
+        <p>All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- javascript -->
+<script>
+    const courses = [
+        "App Development",
+        "Content Creation",
+        "Data Science",
+        "Graphic Design",
+        "JavaScript",
+        "Python Programming",
+        "SEO",
+        "UI/UX Design",
+        "Video Editing",
+        "Web Development"
+    ].sort();
+
+    const input = document.getElementById("courseInput");
+    const dropdown = document.getElementById("courseDropdown");
+
+    function showCourses(filter = "") {
+        dropdown.innerHTML = "";
+
+        const filtered = courses.filter(course =>
+            course.toLowerCase().includes(filter.toLowerCase())
+        );
+
+        filtered.forEach(course => {
+            const item = document.createElement("div");
+            item.textContent = course;
+            item.onclick = () => {
+                input.value = course;
+                dropdown.style.display = "none";
+            };
+            dropdown.appendChild(item);
+        });
+
+        dropdown.style.display = filtered.length ? "block" : "none";
+    }
+
+    input.addEventListener("input", () => {
+        showCourses(input.value);
+    });
+
+    input.addEventListener("focus", () => {
+        showCourses(input.value);
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".custom-select")) {
+            dropdown.style.display = "none";
+        }
+    });
+</script>
+
+</body>
+</html>
