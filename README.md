@@ -1,9 +1,24 @@
 # Form Submission & Management System
 
-Description: This is a form alongside with the management system. In the form you can enter your name , course and contact information and click submit and it will be saved to the database and you will be able to manage it in the management panel
-To access the management panel simply type /management after whatever local host address is showing and login with the user name and password (both are mashood and mashood)
+## How to Run
 
----
+1. Clone:
+   git clone https://github.com/Mashood19/student-management-system.git
+2. Create virtual environment:
+   python -m venv venv
+   venv\Scripts\activate
+3. Install dependencies:
+   pip install -r requirements.txt
+4. Run migrations:
+   python manage.py migrate
+5. Create admin user:
+   python manage.py createsuperuser
+6. Run server:
+   python manage.py runserver
+7. Access:
+   - Form page: http://127.0.0.1:8000/
+   - Management panel: http://127.0.0.1:8000/management/
+
 
 ## Quick Start (Windows & macOS / Linux)
 
