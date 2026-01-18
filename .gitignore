@@ -1,13 +1,12 @@
+# Django / Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.Python
-env/
-venv/
-*.sqlite3
 db.sqlite3
-*.log
-staticfiles/
 .env
-.DS_Store
+venv/
+
+# Railway (ignore everything related to it)
+railway.json
+.railway/
