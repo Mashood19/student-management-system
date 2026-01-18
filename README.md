@@ -1,6 +1,6 @@
 # Form Submission & Management System
 
-## How to Run
+## How to Run ( IMPORTANT NOTE : All the demo data is included)
 
 1. Clone:
    git clone https://github.com/Mashood19/student-management-system.git
