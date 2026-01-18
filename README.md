@@ -4,18 +4,19 @@
 
 1. Clone:
    git clone https://github.com/Mashood19/student-management-system.git
-2. Create virtual environment:
+2. run cd student-management-system 
+3. Create virtual environment:
    python -m venv venv
-   venv\Scripts\activate
-3. Install dependencies:
+.\venv\Scripts\activate 
+4. Install dependencies:
    pip install -r requirements.txt
-4. Run migrations:
+5. Run migrations:
    python manage.py migrate
-5. Create admin user:
+6. Create admin user:
    python manage.py createsuperuser
-6. Run server:
+7. Run server:
    python manage.py runserver
-7. Access:
+8. Access:
    - Form page: http://127.0.0.1:8000/
    - Management panel: http://127.0.0.1:8000/management/
 
@@ -27,8 +28,5 @@
 - Git
 - (Optional) PostgreSQL or other DB for production
 
-### 1. Clone
-```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+
     
