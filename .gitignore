@@ -1,11 +1,34 @@
-# Django / Python
-__pycache__/
+# Python & Django
 *.pyc
+__pycache__/
 *.pyo
 *.pyd
+*.sqlite3
 db.sqlite3
 .env
 venv/
+ENV/
+env/
+.Python
+
+# IDEs and OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Node (if present)
+node_modules/
+
 
 # Railway (ignore everything related to it)
 railway.json
