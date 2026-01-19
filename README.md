@@ -26,13 +26,15 @@ pip install -r requirements.txt
 
 # Apply database migrations
 python manage.py makemigrations
+
 python manage.py migrate
 
 # Run the server
 python manage.py runserver
 
-# Login credentials 
+
 username: mashood
+
 password: mashood
 
 
