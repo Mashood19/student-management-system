@@ -2,31 +2,45 @@
 
 ## How to Run ( IMPORTANT NOTE : All the demo data is included)
 
-1. Clone:
-   git clone https://github.com/Mashood19/student-management-system.git
-2. run cd student-management-system 
-3. Create virtual environment:
-   python -m venv venv
-.\venv\Scripts\activate 
-4. Install dependencies:
-   pip install -r requirements.txt
-5. Run migrations:
-   python manage.py migrate
-6. Create admin user:
-   python manage.py createsuperuser
-7. Run server:
-   python manage.py runserver
-8. Access:
-   - Form page: http://127.0.0.1:8000/
-   - Management panel: http://127.0.0.1:8000/management/
+## How to Run (Windows)
+
+### Requirements
+- Python 3.9+
+- Git
+
+---
+
+<!-- Steps --> 
+paste these commands in to vs code powershell terminal to run the web app
+
+# Clone the repository
+git clone https://github.com/Mashood19/student-management-system.git
+cd student-management-system
+
+# Create and activate virtual environment
+python -m venv venv
+.\venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Apply database migrations
+python manage.py makemigrations
+python manage.py migrate
+
+# Run the server
+python manage.py runserver
+
+# Login credentials 
+username: mashood
+password: mashood
 
 
-## Quick Start (Windows & macOS / Linux)
 
 ### Prerequisites
 - Python 3.10+ installed
 - Git
-- (Optional) PostgreSQL or other DB for production
+- DATABASE is Sqlite 3 ( django's defualt)
 
 
     
