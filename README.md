@@ -37,6 +37,8 @@ username: mashood
 
 password: mashood
 
+ Note: The link will open to the form , to access the management panel add /management after http://127.0.0.1:8000 in the adress bar
+
 
 
 ### Prerequisites
